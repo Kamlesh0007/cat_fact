@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+  --grayish-blue: hsl(217, 19%, 38%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-grayish-blue);
   display: flex;
   flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 1.25rem;
+font-family: "Manrope", sans-serif;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  min-width: 320px;
+  min-height: 300px;
+  color: #ffffff;
+  padding: 1.25rem 1.25rem 3rem;
+  border-radius: 15px;
+  background-color: var(--grayish-blue);
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.container h1 {
+  color: var(--neon-green);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.15rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container p {
+  font-size: 28px;
+  color: var(--light-cyan);
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+button{
+  left: 50%;
+transform: translateX(-50%);
+bottom: -2rem;
+  background-color: var(--neon-green);
+  padding: 1.25rem;
+  border: none;
+position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+}
+button:hover {
+  box-shadow: 0 0 40px 2px var(--neon-green);
+}
+
+button img{
+  width: 48px;
+  height: 48px;
+
+}
+.loader{
+
+  display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 90px;
+    align-items: center;
+}
+.dot-loader {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--neon-green);
+  position: relative;
+  -webkit-animation: 1.2s grow ease-in-out infinite;
+  animation: 1.2s grow ease-in-out infinite;
+}
+
+.dot-loader--2 {
+  -webkit-animation: 1.2s grow ease-in-out infinite 0.15555s;
+  animation: 1.2s grow ease-in-out infinite 0.15555s;
+  margin: 0 20px;
+}
+.dot-loader--3 {
+  -webkit-animation: 1.2s grow ease-in-out infinite 0.3s;
+  animation: 1.2s grow ease-in-out infinite 0.3s;
+}
+@-webkit-keyframes grow {
+  0%, 40%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes grow {
+  0%, 40%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+@media (min-width: 500px) {
+  .container {
+    max-width: 480px;
+    min-width: 480px;
   }
 }
